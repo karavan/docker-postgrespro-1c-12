@@ -16,8 +16,7 @@ apt-get -qq install --yes --no-install-recommends apt-utils ca-certificates curl
 curl -s http://repo.postgrespro.ru/keys/GPG-KEY-POSTGRESPRO | apt-key add - && \
 echo "# Repositiory for '$PRODUCT_NAME'" > "/etc/apt/sources.list.d/postgrespro.list" && \
 echo "deb $REPO $DISTR main" >> "/etc/apt/sources.list.d/postgrespro.list" && \
-curl -Lso /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-arc
-hitecture)" && \
+curl -Lso /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)" && \
 chmod +x /usr/local/bin/gosu && \
 gosu nobody true && \
 apt-get -qq update && \
